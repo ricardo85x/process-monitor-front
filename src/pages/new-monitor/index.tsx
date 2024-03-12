@@ -29,6 +29,7 @@ export const NewMonitorPage = () => {
         }
 
         function handleCurrentProcess(values: Process[]) {
+            values.sort((a, b) => b.id - a.id)
             setCurrentProcess(values.map(p => ({ ...p, isNew: true })));
             setShowNewProcessAnimation(true);
             setTimeout(() => setShowNewProcessAnimation(false), 2000);
@@ -44,6 +45,8 @@ export const NewMonitorPage = () => {
                         prev.filter(p => !values.some(v => v.id === p.id))
                             .map(p => ({ ...p, isNew: false }));
                     const all = [...newValues, ...prevValues]
+
+                    all.sort((a, b) => b.id - a.id)
                     return all
                 }
                 

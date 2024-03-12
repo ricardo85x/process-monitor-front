@@ -13,7 +13,7 @@ export const ProcessList: React.FC<ProcessListProps> = ({ title, processes, anim
             <div className="text-lg font-bold">{title}</div>
             {processes.map((process) => (
                 <div key={process.id} className={`rounded-lg shadow-md flex min-w-72 ${type === 'new' ? 'bg-green-700' : 'bg-red-700'} ${animation && process.isNew ? 'animate-pulse' : ''}  `}>
-                    <div className={`w-fit p-4 ${type === 'new' ? 'bg-green-800' : 'bg-red-800'} rounded-l-lg flex justify-center items-center`}>
+                    <div className={`w-fit min-w-20 p-4 ${type === 'new' ? 'bg-green-800' : 'bg-red-800'} rounded-l-lg flex justify-center items-center`}>
                         <div className="text-sm">{process.id}</div>
                     </div>
                     <div className={`flex-grow p-4 ${type === 'new' ? 'bg-green-700' : 'bg-red-700'}  rounded-r-lg`}>
